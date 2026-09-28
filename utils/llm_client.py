@@ -20,7 +20,7 @@ def get_llm_response(prompt: str, system_instruction: str = None) -> str:
         try:
             # Using the fast OSS model
             response = client.chat.completions.create(
-                model='openai/gpt-oss-120b',
+                model='llama3-70b-8192', # Changed to a valid Groq model
                 messages=messages,
                 temperature=0.2 # Low temperature for more deterministic coding output
             )
