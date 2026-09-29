@@ -11,6 +11,7 @@ It fulfills all the core requirements of an automated bug-fixing system:
 
 > 📖 **Deep Dives & Resources**:
 > - [Autonomous AI Bug Fixing.pptx](Autonomous%20AI%20Bug%20Fixing.pptx) — Comprehensive presentation slide deck.
+> - [Video.mp4](Video.mp4) — End-to-end demonstration video walkthrough.
 > - [ARCHITECTURE.md](ARCHITECTURE.md) — High-level system design, sequence diagrams, and module responsibilities.
 > - [AGENT_WORKFLOW.md](AGENT_WORKFLOW.md) — Multi-agent state machine, lifecycle transitions, and data exchange protocols.
 
