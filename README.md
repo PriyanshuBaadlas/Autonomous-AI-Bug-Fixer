@@ -9,7 +9,9 @@ It fulfills all the core requirements of an automated bug-fixing system:
 4. **Isolated Sandboxing:** Runs `pytest` automated validations in isolated temporary directories.
 5. **Interactive & CLI Support:** Run via command line arguments or interactive prompts with built-in demo defaults.
 
-> 📖 **Deep Dive**: For full architectural flowcharts, component diagrams, and sequence flows, see [ARCHITECTURE.md](ARCHITECTURE.md).
+> 📖 **Deep Dives**:
+> - [ARCHITECTURE.md](ARCHITECTURE.md) — High-level system design, sequence diagrams, and module responsibilities.
+> - [AGENT_WORKFLOW.md](AGENT_WORKFLOW.md) — Multi-agent state machine, lifecycle transitions, and data exchange protocols.
 
 ## ⚙️ Setup
 

@@ -2,6 +2,8 @@
 
 This document details the multi-agent design, component interactions, and execution flow of the **Autonomous AI Bug Fixing Pipeline**.
 
+> 💡 For the step-by-step lifecycle state machine and data exchange protocols, see [AGENT_WORKFLOW.md](AGENT_WORKFLOW.md).
+
 ---
 
 ## 📊 High-Level Architecture Diagram
