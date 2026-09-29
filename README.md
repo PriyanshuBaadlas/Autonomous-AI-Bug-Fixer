@@ -9,60 +9,7 @@ It fulfills all the core requirements of an automated bug-fixing system:
 4. **Isolated Sandboxing:** Runs `pytest` automated validations in isolated temporary directories.
 5. **Interactive & CLI Support:** Run via command line arguments or interactive prompts with built-in demo defaults.
 
-## 🏗️ System Architecture
-
-```mermaid
-flowchart TD
-    subgraph Inputs["1. Ingestion"]
-        A1["📄 Target Source Code"]
-        A2["📝 Bug Report / Description"]
-        A3["⚠️ Error Logs / Traceback"]
-    end
-
-    subgraph Phase1["2. Inspection Phase"]
-        B["🔍 Inspector Agent"]
-        LLM1[("Groq API<br/>gpt-oss-120b / qwen3.8-27b")]
-        RCA["📋 Root Cause Analysis (RCA)"]
-    end
-
-    subgraph Phase23["3. Development & Validation Loop"]
-        C["💻 Developer Agent"]
-        LLM2[("Groq API<br/>Patch Generation")]
-        Patch["✂️ Search/Replace Blocks"]
-        
-        subgraph Sandbox["Isolated Sandbox (tempfile)"]
-            S1["📁 Clone Target Dir"]
-            S2["🧩 Apply Patch"]
-            S3["🧪 Run pytest Suite"]
-        end
-        
-        Decision{"Tests Passed?"}
-        Retry["🔁 Feedback Loop<br/>(Append error trace, retry up to 2x)"]
-    end
-
-    subgraph Phase4["4. Reporting & Application"]
-        D["📝 Reporter Agent"]
-        LLM3[("Groq API<br/>PR Synthesis")]
-        PR["📄 PR Summary & Unified Diff"]
-        Disk["🎉 Update Target File on Disk"]
-    end
-
-    A1 & A2 & A3 --> B
-    B <--> LLM1
-    B --> RCA
-
-    RCA --> C
-    C <--> LLM2
-    C --> Patch
-
-    Patch --> S1 --> S2 --> S3 --> Decision
-    Decision -- "❌ Failed" --> Retry
-    Retry --> C
-    Decision -- "✅ Passed" --> D
-
-    D <--> LLM3
-    D --> PR --> Disk
-```
+> 📖 **Deep Dive**: For full architectural flowcharts, component diagrams, and sequence flows, see [ARCHITECTURE.md](ARCHITECTURE.md).
 
 ## ⚙️ Setup
 
