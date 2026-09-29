@@ -21,13 +21,17 @@ def main():
     
     # 1. Accept Source Code Repository and Bug Description
     if not args.repo_path:
-        args.repo_path = input("Please enter the path to the repository: ")
+        prompt_val = input("Please enter the path to the repository [default: demo_target]: ").strip()
+        args.repo_path = prompt_val if prompt_val else "demo_target"
     if not args.target_file:
-        args.target_file = input("Please enter the relative path to the buggy file: ")
+        prompt_val = input("Please enter the relative path to the buggy file [default: order_processor.py]: ").strip()
+        args.target_file = prompt_val if prompt_val else "order_processor.py"
     if not args.bug_report:
-        args.bug_report = input("Please enter the bug report/description: ")
+        prompt_val = input("Please enter the bug report/description: ").strip()
+        args.bug_report = prompt_val if prompt_val else "When an order has customer tier discounts or coupons applied, the sales tax is incorrectly calculated on the gross subtotal instead of the net discounted taxable amount in process_order, resulting in customers being overcharged."
     if not args.error_log:
-        args.error_log = input("Please enter any error logs (press Enter to skip): ")
+        prompt_val = input("Please enter any error logs (press Enter to skip): ").strip()
+        args.error_log = prompt_val
 
     repo_dir = args.repo_path
     target_file = args.target_file

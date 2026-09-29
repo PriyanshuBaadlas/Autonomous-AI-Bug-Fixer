@@ -33,9 +33,9 @@ Alternatively, you can provide the arguments directly via the CLI:
 ```bash
 python main.py \
   --repo_path "demo_target" \
-  --target_file "calculator.py" \
-  --bug_report "The calculator add function is failing when we try to add two positive numbers." \
-  --error_log "AssertionError: assert 5 == -1"
+  --target_file "order_processor.py" \
+  --bug_report "When an order has customer tier discounts or coupons applied, the sales tax is incorrectly calculated on the gross subtotal instead of the net discounted taxable amount in process_order, resulting in customers being overcharged." \
+  --error_log "AssertionError: assert 8.25 == 7.43 where 8.25 = OrderInvoice(...).tax"
 ```
 
 ## 🧩 How it works
